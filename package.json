@@ -1,0 +1,39 @@
+{
+  "name": "langgraph-agent-test",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/server.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx src/server.ts",
+    "schema": "tsx src/weaviate/schema.ts",
+    "seed": "tsx src/weaviate/seed.ts",
+    "test:chart": "tsx src/tests/testChartTool.ts",
+    "test:rag": "tsx src/tests/testRAGAgent.ts",
+    "test:delegating": "tsx src/tests/testDelegatingAgent.ts",
+    "test:streaming": "tsx src/tests/testStreaming.ts",
+    "test:all": "npm run test:chart && npm run test:rag && npm run test:delegating"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.1.17",
+    "@langchain/langgraph": "^1.1.2",
+    "@langchain/openai": "^1.2.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "graphql": "^16.12.0",
+    "langchain": "^1.2.14",
+    "weaviate-ts-client": "^2.2.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.10",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
